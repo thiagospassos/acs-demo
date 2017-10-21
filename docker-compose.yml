@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    image: web
+    build:
+      context: ./Web
+      dockerfile: Dockerfile
+
+  apix:
+    image: apix
+    build:
+      context: ./ApiX
+      dockerfile: Dockerfile
