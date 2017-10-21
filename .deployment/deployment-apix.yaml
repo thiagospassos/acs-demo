@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: apix
+spec:
+  replicas: 2
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        service: apix
+    spec:
+      containers:
+      - image: thiago.azurecr.io/apix:1.0.0
+        name: apix
+        ports:
+        - containerPort: 80
+        resources: {}
+      imagePullSecrets:
+      - name: regsecret
+      restartPolicy: Always
+status: {}

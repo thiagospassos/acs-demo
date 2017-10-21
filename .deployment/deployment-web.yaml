@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: demo-web
+spec:
+  replicas: 2
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        service: demo-web
+    spec:
+      containers:
+      - image: thiago.azurecr.io/demo-web:1.0.5
+        name: demo-web
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
+        ports:
+        - containerPort: 80
+        resources: {}
+      imagePullSecrets:
+      - name: regsecret
+      restartPolicy: Always
+status: {}
