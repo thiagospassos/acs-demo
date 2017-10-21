@@ -17,6 +17,7 @@ namespace Web.Controllers
         {
             get
             {
+
                 var client = new HttpClient { BaseAddress = new Uri("http://apix") };
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
