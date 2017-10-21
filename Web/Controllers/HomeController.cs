@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Runtime.Serialization.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Web.Models;
@@ -16,7 +17,7 @@ namespace Web.Controllers
         {
             get
             {
-                var client = new HttpClient { BaseAddress = new Uri("apix") };
+                var client = new HttpClient { BaseAddress = new Uri("http://apix") };
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 return client;
@@ -28,10 +29,13 @@ namespace Web.Controllers
             var response = await ApiXClient.GetAsync("/");
             if (response.IsSuccessStatusCode)
             {
-                View(new { Code = response.StatusCode, Content = await response.Content.ReadAsStringAsync() });
+                var stream = await response.Content.ReadAsStreamAsync();
+                var serializer = new DataContractJsonSerializer(typeof(List<string>));
+                var content = (List<string>) serializer.ReadObject(stream);
+                return View(new ApiXResponse { Code = response.StatusCode.ToString(), Values = content });
             }
 
-            return View(new { Code = response.StatusCode });
+            return View(new ApiXResponse { Code = response.StatusCode.ToString() });
         }
 
         public IActionResult About()

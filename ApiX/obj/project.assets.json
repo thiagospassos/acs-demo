@@ -12542,11 +12542,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\thiago\\OneDrive\\Work\\Talks\\2017-10-23 Azure Container Services\\demo\\AcsDemo\\ApiX\\ApiX.csproj",
+      "projectUniqueName": "C:\\Users\\thiago\\Source\\Repos\\_Demos\\ACS\\ApiX\\ApiX.csproj",
       "projectName": "ApiX",
-      "projectPath": "C:\\Users\\thiago\\OneDrive\\Work\\Talks\\2017-10-23 Azure Container Services\\demo\\AcsDemo\\ApiX\\ApiX.csproj",
+      "projectPath": "C:\\Users\\thiago\\Source\\Repos\\_Demos\\ACS\\ApiX\\ApiX.csproj",
       "packagesPath": "C:\\Users\\thiago\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thiago\\OneDrive\\Work\\Talks\\2017-10-23 Azure Container Services\\demo\\AcsDemo\\ApiX\\obj\\",
+      "outputPath": "C:\\Users\\thiago\\Source\\Repos\\_Demos\\ACS\\ApiX\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

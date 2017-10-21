@@ -6,6 +6,8 @@ services:
     build:
       context: ./Web
       dockerfile: Dockerfile
+    links:
+      - apix
 
   apix:
     image: apix

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiX.Controllers
 {
+    [Route("")]
     public class ValuesController : Controller
     {
         // GET api/values
