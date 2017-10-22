@@ -11,7 +11,7 @@ spec:
         service: demo-web
     spec:
       containers:
-      - image: thiago.azurecr.io/demo-web:1.0.5
+      - image: thiago.azurecr.io/demo-web:1.0.0
         name: demo-web
         env:
         - name: ASPNETCORE_ENVIRONMENT
